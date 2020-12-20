@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "C:/Users/nino/Desktop/TsotneLab/lab470EXTRA12/lab470extra12/lab470extra12/toptest12_isim_beh.exe" -prj "C:/Users/nino/Desktop/TsotneLab/lab470EXTRA12/lab470extra12/lab470extra12/toptest12_beh.prj" "work.toptest12" "work.glbl" 

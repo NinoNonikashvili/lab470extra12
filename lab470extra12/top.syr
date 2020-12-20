@@ -1,0 +1,486 @@
+Release 14.5 - xst P.58f (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.31 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.31 secs
+ 
+--> Reading design: top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "top.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "top"
+Output Format                      : NGC
+Target Device                      : xc3s100e-4-cp132
+
+---- Source Options
+Top Module Name                    : top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "top.v" in library work
+Module <top> compiled
+No errors in compilation
+Analysis of file <"top.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <top> in library <work> with parameters.
+	max = 4000
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <top>.
+	max = 4000
+Module <top> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <top>.
+    Related source file is "top.v".
+    Found finite state machine <FSM_0> for signal <enable_anode>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 4                                              |
+    | Inputs             | 0                                              |
+    | Outputs            | 8                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Clock enable       | enable_anode$cmp_eq0000   (positive)           |
+    | Power Up State     | 00                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 4-bit register for signal <anode>.
+    Found 7-bit register for signal <led>.
+    Found 4-bit adder for signal <$add0000> created at line 114.
+    Found 4-bit adder for signal <$add0001> created at line 114.
+    Found 4-bit adder for signal <$add0002> created at line 114.
+    Found 4-bit adder for signal <$add0003> created at line 114.
+    Found 4-bit adder for signal <$add0004> created at line 116.
+    Found 4-bit adder for signal <$add0005> created at line 114.
+    Found 4-bit adder for signal <$add0006> created at line 116.
+    Found 4-bit adder for signal <$add0007> created at line 114.
+    Found 4-bit adder for signal <$add0008> created at line 116.
+    Found 4-bit adder for signal <$add0009> created at line 114.
+    Found 4-bit adder for signal <$add0010> created at line 116.
+    Found 4-bit adder for signal <$add0011> created at line 118.
+    Found 4-bit adder for signal <$add0012> created at line 114.
+    Found 4-bit adder for signal <$add0013> created at line 116.
+    Found 4-bit adder for signal <$add0014> created at line 118.
+    Found 4-bit adder for signal <$add0015> created at line 114.
+    Found 4-bit adder for signal <$add0016> created at line 116.
+    Found 4-bit adder for signal <$add0017> created at line 118.
+    Found 4-bit adder for signal <$add0018> created at line 114.
+    Found 4-bit adder for signal <$add0019> created at line 116.
+    Found 4-bit adder for signal <$add0020> created at line 118.
+    Found 4-bit adder for signal <$add0021> created at line 120.
+    Found 4-bit adder for signal <$add0022> created at line 114.
+    Found 4-bit adder for signal <$add0023> created at line 116.
+    Found 4-bit adder for signal <$add0024> created at line 118.
+    Found 4-bit adder for signal <$add0025> created at line 120.
+    Found 14-bit up counter for signal <binaryNof_sec>.
+    Found 15-bit up counter for signal <counter>.
+    Found 4-bit comparator greatequal for signal <four_digit_input$cmp_ge0000> created at line 113.
+    Found 4-bit comparator greatequal for signal <four_digit_input$cmp_ge0001> created at line 115.
+    Found 4-bit comparator greatequal for signal <four_digit_input$cmp_ge0002> created at line 117.
+    Found 4-bit comparator greatequal for signal <four_digit_input$cmp_ge0003> created at line 119.
+    Found 4-bit comparator greatequal for signal <four_digit_input$cmp_ge0004> created at line 113.
+    Found 4-bit comparator greatequal for signal <four_digit_input$cmp_ge0005> created at line 115.
+    Found 4-bit comparator greatequal for signal <four_digit_input$cmp_ge0006> created at line 117.
+    Found 4-bit comparator greatequal for signal <four_digit_input$cmp_ge0007> created at line 119.
+    Found 4-bit comparator greatequal for signal <four_digit_input$cmp_ge0008> created at line 113.
+    Found 4-bit comparator greatequal for signal <four_digit_input$cmp_ge0009> created at line 115.
+    Found 4-bit comparator greatequal for signal <four_digit_input$cmp_ge0010> created at line 117.
+    Found 4-bit comparator greatequal for signal <four_digit_input$cmp_ge0011> created at line 113.
+    Found 4-bit comparator greatequal for signal <four_digit_input$cmp_ge0012> created at line 115.
+    Found 4-bit comparator greatequal for signal <four_digit_input$cmp_ge0013> created at line 117.
+    Found 4-bit comparator greatequal for signal <four_digit_input$cmp_ge0014> created at line 113.
+    Found 4-bit comparator greatequal for signal <four_digit_input$cmp_ge0015> created at line 115.
+    Found 4-bit comparator greatequal for signal <four_digit_input$cmp_ge0016> created at line 117.
+    Found 4-bit comparator greatequal for signal <four_digit_input$cmp_ge0017> created at line 113.
+    Found 4-bit comparator greatequal for signal <four_digit_input$cmp_ge0018> created at line 115.
+    Found 4-bit comparator greatequal for signal <four_digit_input$cmp_ge0019> created at line 113.
+    Found 4-bit comparator greatequal for signal <four_digit_input$cmp_ge0020> created at line 115.
+    Found 4-bit comparator greatequal for signal <four_digit_input$cmp_ge0021> created at line 113.
+    Found 4-bit comparator greatequal for signal <four_digit_input$cmp_ge0022> created at line 115.
+    Found 4-bit comparator greatequal for signal <four_digit_input$cmp_ge0023> created at line 113.
+    Found 4-bit comparator greatequal for signal <four_digit_input$cmp_ge0024> created at line 113.
+    Found 4-bit comparator greatequal for signal <four_digit_input$cmp_ge0025> created at line 113.
+    Found 31-bit up counter for signal <sec_counter>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   3 Counter(s).
+	inferred  11 D-type flip-flop(s).
+	inferred  26 Adder/Subtractor(s).
+	inferred  26 Comparator(s).
+Unit <top> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 26
+ 4-bit adder                                           : 26
+# Counters                                             : 3
+ 14-bit up counter                                     : 1
+ 15-bit up counter                                     : 1
+ 31-bit up counter                                     : 1
+# Registers                                            : 2
+ 4-bit register                                        : 1
+ 7-bit register                                        : 1
+# Comparators                                          : 26
+ 4-bit comparator greatequal                           : 26
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <enable_anode/FSM> on signal <enable_anode[1:4]> with one-hot encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 0001
+ 01    | 0010
+ 10    | 0100
+ 11    | 1000
+-------------------
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# Adders/Subtractors                                   : 26
+ 3-bit adder                                           : 2
+ 4-bit adder                                           : 24
+# Counters                                             : 3
+ 14-bit up counter                                     : 1
+ 15-bit up counter                                     : 1
+ 31-bit up counter                                     : 1
+# Registers                                            : 11
+ Flip-Flops                                            : 11
+# Comparators                                          : 26
+ 4-bit comparator greatequal                           : 26
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <top> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 15.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 75
+ Flip-Flops                                            : 75
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : top.ngr
+Top Level Output File Name         : top
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 14
+
+Cell Usage :
+# BELS                             : 592
+#      GND                         : 1
+#      INV                         : 8
+#      LUT1                        : 57
+#      LUT2                        : 21
+#      LUT2_D                      : 5
+#      LUT2_L                      : 6
+#      LUT3                        : 51
+#      LUT3_D                      : 8
+#      LUT3_L                      : 5
+#      LUT4                        : 189
+#      LUT4_D                      : 47
+#      LUT4_L                      : 46
+#      MUXCY                       : 65
+#      MUXF5                       : 22
+#      VCC                         : 1
+#      XORCY                       : 60
+# FlipFlops/Latches                : 75
+#      FDE                         : 15
+#      FDR                         : 15
+#      FDRE                        : 45
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 13
+#      IBUF                        : 2
+#      OBUF                        : 11
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s100ecp132-4 
+
+ Number of Slices:                      225  out of    960    23%  
+ Number of Slice Flip Flops:             75  out of   1920     3%  
+ Number of 4 input LUTs:                443  out of   1920    23%  
+ Number of IOs:                          14
+ Number of bonded IOBs:                  14  out of     83    16%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 75    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 26.511ns (Maximum Frequency: 37.720MHz)
+   Minimum input arrival time before clock: 5.147ns
+   Maximum output required time after clock: 4.283ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 26.511ns (frequency: 37.720MHz)
+  Total number of paths / destination ports: 87832530 / 150
+-------------------------------------------------------------------------
+Delay:               26.511ns (Levels of Logic = 20)
+  Source:            binaryNof_sec_12 (FF)
+  Destination:       led_4 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: binaryNof_sec_12 to led_4
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q            13   0.591   1.158  binaryNof_sec_12 (binaryNof_sec_12)
+     LUT3:I0->O            1   0.704   0.455  four_digit_input_mux00061_SW0 (N66)
+     LUT4:I2->O           12   0.704   0.965  four_digit_input_mux000811 (N49)
+     LUT4:I3->O            8   0.704   0.761  four_digit_input_mux001611 (N48)
+     LUT4:I3->O            6   0.704   0.673  Madd__add0006_cy<1>11 (Madd__add0006_cy<1>)
+     LUT4:I3->O           13   0.704   0.987  four_digit_input_mux0020 (four_digit_input_mux0020)
+     LUT4_L:I3->LO         1   0.704   0.135  four_digit_input_mux0029_SW1 (N262)
+     LUT3:I2->O            8   0.704   0.761  four_digit_input_mux0029 (Madd__add0010_lut<3>)
+     LUT4_D:I3->LO         1   0.704   0.104  four_digit_input_cmp_ge00151 (N629)
+     LUT4:I3->O            4   0.704   0.591  four_digit_input_mux005211_SW0 (N1511)
+     LUT4_D:I3->O          9   0.704   0.824  four_digit_input_mux005211 (N42)
+     LUT4:I3->O            4   0.704   0.622  four_digit_input_mux006411_SW0 (N99)
+     LUT4_D:I2->O         12   0.704   0.965  four_digit_input_mux006411 (N39)
+     LUT4:I3->O            1   0.704   0.000  four_digit_input_mux007511_SW1_F (N537)
+     MUXF5:I0->O           1   0.321   0.424  four_digit_input_mux007511_SW1 (N135)
+     LUT4:I3->O            7   0.704   0.743  four_digit_input_mux007721 (N161)
+     LUT4:I2->O            1   0.704   0.455  four_digit_input_mux009011_SW4 (N354)
+     LUT4:I2->O            3   0.704   0.566  four_digit_input_mux00931 (four_digit_input<9>)
+     LUT4_L:I2->LO         1   0.704   0.104  led_mux0000<2>22 (led_mux0000<2>22)
+     LUT4:I3->O            2   0.704   0.622  led_mux0000<2>224 (N54)
+     LUT4:I0->O            1   0.704   0.000  led_mux0000<2>118 (led_mux0000<2>)
+     FDE:D                     0.308          led_4
+    ----------------------------------------
+    Total                     26.511ns (14.596ns logic, 11.915ns route)
+                                       (55.1% logic, 44.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 121 / 90
+-------------------------------------------------------------------------
+Offset:              5.147ns (Levels of Logic = 2)
+  Source:            btn0 (PAD)
+  Destination:       sec_counter_0 (FF)
+  Destination Clock: clk rising
+
+  Data Path: btn0 to sec_counter_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            15   1.218   1.052  btn0_IBUF (btn0_IBUF)
+     LUT3:I2->O           31   0.704   1.262  sec_counter_or00001 (sec_counter_or0000)
+     FDRE:R                    0.911          sec_counter_0
+    ----------------------------------------
+    Total                      5.147ns (2.833ns logic, 2.314ns route)
+                                       (55.0% logic, 45.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 11 / 11
+-------------------------------------------------------------------------
+Offset:              4.283ns (Levels of Logic = 1)
+  Source:            anode_3 (FF)
+  Destination:       anode<3> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: anode_3 to anode<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              1   0.591   0.420  anode_3 (anode_3)
+     OBUF:I->O                 3.272          anode_3_OBUF (anode<3>)
+    ----------------------------------------
+    Total                      4.283ns (3.863ns logic, 0.420ns route)
+                                       (90.2% logic, 9.8% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 17.00 secs
+Total CPU time to Xst completion: 17.02 secs
+ 
+--> 
+
+Total memory usage is 4505480 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+
